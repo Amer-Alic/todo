@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.cdnfonts.com/css/graphik" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="main.js"></script>
+    <title>Amer's TODO :D</title>
+  </head>
+  <body>
+    <nav>
+      <img src="assets/todo-done-svgrepo-com.svg" id="todo-icon" />
+      <h1>ToDo</h1>
+    </nav>
+    <main>
+      <div id="projects-div">
+        <h2 id="projects-div-h2">PROJECTS</h2>
+        <ul class="projects-ul default">
+          <li class="projects-li default">
+            <div><img src="assets/all-layers-svgrepo-com.svg" class="projects-li-icon" />ALL</div>
+          </li>
+          <li class="projects-li default">
+            <div><img src="assets/last-24-hours-svgrepo-com.svg" class="projects-li-icon" />TODAY</div>
+          </li>
+          <li class="projects-li default">
+            <div><img src="assets/seven-open-svgrepo-com.svg" class="projects-li-icon" />WEEK</div>
+          </li>
+        </ul>
+        <ul class="projects-ul" data-projects-ul></ul>
+        <button type="button" class="projects-add-button" data-projects-add-button>+</button>
+      </div>
+      <div id="tasks-div">
+        <h2 id="tasks-div-h2" data-tasks-h2>ALL</h2>
+        <ul class="tasks-ul" data-tasks-ul></ul>
+        <div id="tasks-add" data-tasks-add>
+          Add Task <img src="assets/plus-alt-svgrepo-com.svg" id="tasks-add-icon" />
+        </div>
+      </div>
+    </main>
+
+    <div id="projects-popup-wrapper" data-projects-popup>
+      <div id="projects-popup">
+        <h2>Add project</h2>
+        <div id="projects-popup-div">
+          <p>Title:</p>
+          <input type="text" data-projects-title />
+          <div id="projects-popup-buttons">
+            <button class="projects-popup-button" id="projects-popup-submit" data-projects-popup-submit>Submit</button>
+            <button class="projects-popup-button" id="projects-popup-cancel" data-projects-popup-cancle>Cancle</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tasks-popup-wrapper" data-tasks-popup>
+      <div id="tasks-popup">
+        <h2>Add task</h2>
+        <div id="tasks-popup-div">
+          <div id="tasks-popup-title-div">
+            <label for="tasks-popup-title">Title:</label>
+            <input type="text" id="tasks-popup-title" data-tasks-popup-title />
+          </div>
+          <div id="tasks-popup-date-div">
+            <label for="tasks-popup-date">Due Date:</label>
+            <input type="date" id="tasks-popup-date" data-tasks-popup-date />
+          </div>
+          <div id="tasks-popup-priority-div">
+            <label for="tasks-popup-priority">Priority:</label>
+            <select id="tasks-popup-priority" data-tasks-popup-priority>
+              <option value selected disabled>How important is this task?</option>
+              <option value="low">LOW</option>
+              <option value="medium">MEDIUM</option>
+              <option value="high">HIGH</option>
+            </select>
+          </div>
+          <div id="tasks-popup-buttons">
+            <button class="tasks-popup-button" id="tasks-popup-submit" data-tasks-popup-submit>Submit</button>
+            <button class="tasks-popup-button" id="tasks-popup-cancel" data-tasks-popup-cancle>Cancle</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
