@@ -40,10 +40,6 @@ export default class Project {
     }
   }
 
-  renameProject(newTitle) {
-    this.title = newTitle;
-  }
-
   addTask(NewTask) {
     this.tasks.push(NewTask);
   }

@@ -20,6 +20,16 @@ export default class Task {
     function makeSpan(spanClass, spanText) {
       let span = document.createElement("span");
       span.classList.add(spanClass);
+      if (spanText === "high") {
+        span.style.color = "red";
+        spanText = "H";
+      } else if (spanText === "medium") {
+        span.style.color = "orange";
+        spanText = "M";
+      } else if (spanText === "low") {
+        span.style.color = "green";
+        spanText = "L";
+      }
       span.innerText = spanText;
       return span;
     }
@@ -27,7 +37,15 @@ export default class Task {
     const taskTitleSpan = makeSpan("tasks-title", taskTitle);
     const taskDateSpan = makeSpan("tasks-date", date);
     const taskPrioritySpan = makeSpan("tasks-priority", taskPriority);
-    li.append(taskCheckDiv, taskTitleSpan, taskDateSpan, taskPrioritySpan);
+
+    const editSpan = document.createElement("span");
+    editSpan.classList.add("tasks-edit-span");
+    const editImg = document.createElement("img");
+    editImg.classList.add("tasks-edit-img");
+    editImg.src = "assets/edit-4-svgrepo-com.svg";
+    editSpan.append(editImg);
+
+    li.append(taskCheckDiv, taskTitleSpan, taskDateSpan, taskPrioritySpan, editSpan);
     return li;
   }
 
@@ -36,17 +54,5 @@ export default class Task {
     for (let task of project.tasks) {
       tasksUl.append(Task.makeTaskLi(task.title, task.dueDate, task.priority));
     }
-  }
-
-  renameTask(newTitle) {
-    this.title = newTitle;
-  }
-
-  markDone() {
-    this.done = true;
-  }
-
-  changePriority(newPriority) {
-    this.priority = newPriority;
   }
 }
