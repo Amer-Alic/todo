@@ -11,11 +11,18 @@
   </head>
   <body>
     <nav>
-      <img src="assets/todo-done-svgrepo-com.svg" id="todo-icon" />
-      <h1>ToDo</h1>
+      <div id="h1-wrapper">
+        <img src="assets/todo-done-svgrepo-com.svg" id="todo-icon" />
+        <h1>ToDo</h1>
+      </div>
+      <div id="burger" data-nav-burger>
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+      </div>
     </nav>
     <main>
-      <div id="projects-div">
+      <div id="projects-div" data-projects-div>
         <h2 id="projects-div-h2">PROJECTS</h2>
         <ul class="projects-ul default">
           <li class="projects-li default">
@@ -78,6 +85,35 @@
           <div id="tasks-popup-buttons">
             <button class="tasks-popup-button" id="tasks-popup-submit" data-tasks-popup-submit>Submit</button>
             <button class="tasks-popup-button" id="tasks-popup-cancel" data-tasks-popup-cancle>Cancle</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tasks-popup-wrapper" data-edit-tasks-popup>
+      <div id="tasks-popup">
+        <h2>Add task</h2>
+        <div id="tasks-popup-div">
+          <div id="tasks-popup-title-div">
+            <label for="tasks-popup-title">Title:</label>
+            <input type="text" id="tasks-popup-title" data-edit-tasks-popup-title />
+          </div>
+          <div id="tasks-popup-date-div">
+            <label for="tasks-popup-date">Due Date:</label>
+            <input type="date" id="tasks-popup-date" data-edit-tasks-popup-date />
+          </div>
+          <div id="tasks-popup-priority-div">
+            <label for="tasks-popup-priority">Priority:</label>
+            <select id="tasks-popup-priority" data-edit-tasks-popup-priority>
+              <option value selected disabled>How important is this task?</option>
+              <option value="low">LOW</option>
+              <option value="medium">MEDIUM</option>
+              <option value="high">HIGH</option>
+            </select>
+          </div>
+          <div id="tasks-popup-buttons">
+            <button class="tasks-popup-button" id="tasks-popup-submit" data-edit-tasks-popup-submit>Submit</button>
+            <button class="tasks-popup-button" id="tasks-popup-cancel" data-edit-tasks-popup-cancle>Cancle</button>
           </div>
         </div>
       </div>
