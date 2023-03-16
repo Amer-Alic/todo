@@ -134,7 +134,7 @@ function toggleTasksEditPopup() {
 
     const date = format(new Date(dateText), "yyyy-MM-dd");
     tasksEditDateInput.value = date;
-    console.log(priorityText);
+
     if (priorityText === "H") {
       tasksEditPrioritySelect.selectedIndex = 3;
     } else if (priorityText === "M") {
@@ -168,6 +168,7 @@ function submitTasksEditPopup() {
   Task.displayTasks(p, tasksUl);
   toggleTasksEditPopup();
   addListenersOnTaskButtons();
+  // clear values of input so they do not stay the nex time you open
   tasksEditTitleInput.value = "";
   tasksEditDateInput.value = "";
 }
